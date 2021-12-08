@@ -1,6 +1,11 @@
+using Core.Interfaces;
+using Infrastructure;
+using Infrastructure.UnitOfWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
@@ -12,12 +17,23 @@ namespace Web
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
+        private readonly IConfiguration configration;
+
+        public Startup(IConfiguration configration)
+        {
+            // Allow To Reach To Connection String
+           this.configration = configration;
+        }
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllersWithViews();
+            services.AddDbContext<DataContext>(options =>
+            {
+                options.UseSqlServer(configration.GetConnectionString("MyPortfolioDB"));
+            });
+            services.AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
         }
-
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -27,13 +43,16 @@ namespace Web
             }
 
             app.UseRouting();
+            app.UseStaticFiles(); // To Useing Static Files
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                // define url Route
+                endpoints.MapControllerRoute
+                (
+                "defaultRoute",
+                "{Controller=Home}/{Action=Index}/{id?}"
+                );
             });
         }
     }

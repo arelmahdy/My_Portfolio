@@ -1,7 +1,88 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\freelancer.css" />
+    <None Include="wwwroot\fonts\css\all.css" />
+    <None Include="wwwroot\fonts\css\all.min.css" />
+    <None Include="wwwroot\fonts\css\brands.css" />
+    <None Include="wwwroot\fonts\css\brands.min.css" />
+    <None Include="wwwroot\fonts\css\fontawesome.css" />
+    <None Include="wwwroot\fonts\css\fontawesome.min.css" />
+    <None Include="wwwroot\fonts\css\regular.css" />
+    <None Include="wwwroot\fonts\css\regular.min.css" />
+    <None Include="wwwroot\fonts\css\solid.css" />
+    <None Include="wwwroot\fonts\css\solid.min.css" />
+    <None Include="wwwroot\fonts\css\svg-with-js.css" />
+    <None Include="wwwroot\fonts\css\svg-with-js.min.css" />
+    <None Include="wwwroot\fonts\css\v4-shims.css" />
+    <None Include="wwwroot\fonts\css\v4-shims.min.css" />
+    <None Include="wwwroot\fonts\webfonts\fa-brands-400.eot" />
+    <None Include="wwwroot\fonts\webfonts\fa-brands-400.svg" />
+    <None Include="wwwroot\fonts\webfonts\fa-brands-400.ttf" />
+    <None Include="wwwroot\fonts\webfonts\fa-brands-400.woff" />
+    <None Include="wwwroot\fonts\webfonts\fa-brands-400.woff2" />
+    <None Include="wwwroot\fonts\webfonts\fa-regular-400.eot" />
+    <None Include="wwwroot\fonts\webfonts\fa-regular-400.svg" />
+    <None Include="wwwroot\fonts\webfonts\fa-regular-400.ttf" />
+    <None Include="wwwroot\fonts\webfonts\fa-regular-400.woff" />
+    <None Include="wwwroot\fonts\webfonts\fa-regular-400.woff2" />
+    <None Include="wwwroot\fonts\webfonts\fa-solid-900.eot" />
+    <None Include="wwwroot\fonts\webfonts\fa-solid-900.svg" />
+    <None Include="wwwroot\fonts\webfonts\fa-solid-900.ttf" />
+    <None Include="wwwroot\fonts\webfonts\fa-solid-900.woff" />
+    <None Include="wwwroot\fonts\webfonts\fa-solid-900.woff2" />
+    <None Include="wwwroot\img\portfolio\1216376-new-dark-abstract-wallpapers-hd-2560x1440-for-android-50.jpg" />
+    <None Include="wwwroot\img\portfolio\1_QpkU690MioKK7lHwLE0_Bg.png" />
+    <None Include="wwwroot\img\portfolio\2-nature-wallpaper-grass.1280.jpg" />
+    <None Include="wwwroot\img\portfolio\ahmed tartour.jpg" />
+    <None Include="wwwroot\img\portfolio\angry.png" />
+    <None Include="wwwroot\img\portfolio\commercial.png" />
+    <None Include="wwwroot\img\portfolio\ecole.png" />
+    <None Include="wwwroot\img\portfolio\flappy.png" />
+    <None Include="wwwroot\img\portfolio\gps.png" />
+    <None Include="wwwroot\img\portfolio\home1.png" />
+    <None Include="wwwroot\img\portfolio\instagram.png" />
+    <None Include="wwwroot\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\js\bootstrap.js" />
+    <None Include="wwwroot\js\bootstrap.js.map" />
+    <None Include="wwwroot\js\bootstrap.min.js" />
+    <None Include="wwwroot\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\js\freelancer.js" />
+    <None Include="wwwroot\js\freelancer.min.js" />
+    <None Include="wwwroot\js\jquery.easing.compatibility.js" />
+    <None Include="wwwroot\js\jquery.easing.js" />
+    <None Include="wwwroot\js\jquery.easing.min.js" />
+    <None Include="wwwroot\js\jquery.js" />
+    <None Include="wwwroot\js\jquery.min.js" />
+    <None Include="wwwroot\js\jquery.min.map" />
+    <None Include="wwwroot\js\jquery.slim.js" />
+    <None Include="wwwroot\js\jquery.slim.min.js" />
+    <None Include="wwwroot\js\jquery.slim.min.map" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>

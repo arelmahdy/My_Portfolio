@@ -1,6 +1,6 @@
 ﻿namespace Core.EntityBase
 {
-    public class Adress
+    public class Adress : EntityBase
     {
         public string Street { get; set; }
         public string City { get; set; }
